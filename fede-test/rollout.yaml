@@ -28,6 +28,12 @@ spec:
   strategy:
     canary:
       canaryService: canary-demo-preview
+      stableService: canary-demo
+      trafficRouting:
+        nginx:
+          stableIngress: canary-demo
+          additionalIngressAnnotations:
+            nginx.ingress.kubernetes.io/canary: "true"
       steps:
         - setCanaryScale:
             replicas: 1
