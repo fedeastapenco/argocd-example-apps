@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: create-ticket-job
+spec:
+  metrics:
+    - name: ticket-approval
+      provider:
+        job:
+          spec:
+            template:
+              spec:
+                restartPolicy: Never
+                containers:
+                  - name: ticket
+                    image: ticket-generator:1.0.0
