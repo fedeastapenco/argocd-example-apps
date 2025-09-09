@@ -38,9 +38,4 @@ spec:
         - setCanaryScale:
             replicas: 1
         - pause: {}
-        - setWeight: 20
-        - pause: { duration: 10 }
-        - setWeight: 60
-        - pause: {}
-        - setWeight: 80
-        - pause: { duration: 10 }
+        - setWeight: 100
