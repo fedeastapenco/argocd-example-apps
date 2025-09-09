@@ -37,5 +37,18 @@ spec:
       steps:
         - setCanaryScale:
             replicas: 1
+        - analysis:
+            metrics:
+              - name: eservice-task-job
+                provider:
+                  job:
+                    spec:
+                      backoffLimit: 1
+                      template:
+                        spec:
+                          containers:
+                            - name: job
+                              image: ticket-generator:1.0.0
+                          restartPolicy: Never
         - pause: {}
         - setWeight: 100
