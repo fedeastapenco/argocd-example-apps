@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: canary-demo
-          image: argoproj/rollouts-demo:red
+          image: argoproj/rollouts-demo:green
           imagePullPolicy: Always
           ports:
             - name: http
@@ -39,6 +39,7 @@ spec:
             replicas: 1
         - setWeight: 60
         - pause: {}
+
         - analysis:
             templates:
               - templateName: create-ticket-job
