@@ -38,8 +38,8 @@ spec:
         - setCanaryScale:
             replicas: 1
         - analysis:
-          templates:
-            - templateName: create-ticket-job
-              clusterScope: true
+            templates:
+              - templateName: create-ticket-job
+                clusterScope: true
         - pause: {}
         - setWeight: 100
