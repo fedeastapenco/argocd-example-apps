@@ -37,10 +37,10 @@ spec:
       steps:
         - setCanaryScale:
             replicas: 1
-        - setWeight: 50
         - setCanaryScale:
             matchTrafficWeight: true
         - pause: {}
+        - setWeight: 50
         - analysis:
             templates:
               - templateName: create-ticket-job
