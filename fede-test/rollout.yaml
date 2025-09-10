@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary-demo
 spec:
-  replicas: 5
+  replicas: 6
   revisionHistoryLimit: 1
   selector:
     matchLabels:
@@ -37,11 +37,11 @@ spec:
       steps:
         - setCanaryScale:
             replicas: 1
-        - setWeight: 60
+        - setWeight: 50
+        - setCanaryScale:
+            matchTrafficWeight: true
         - pause: {}
-
         - analysis:
             templates:
               - templateName: create-ticket-job
-
         - setWeight: 100
