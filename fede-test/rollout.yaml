@@ -4,7 +4,7 @@ metadata:
   name: canary-demo
 spec:
   replicas: 6
-  revisionHistoryLimit: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: canary-demo
