@@ -39,12 +39,8 @@ spec:
             replicas: 1
         - setCanaryScale:
             matchTrafficWeight: true
-        - pause: {}
         - analysis:
             templates:
               - templateName: create-ticket-job
-        - analysis:
-            templates:
-              - templateName: check-ticket-job
-
+        - pause: {}
         - setWeight: 100
