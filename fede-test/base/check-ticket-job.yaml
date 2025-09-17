@@ -1,0 +1,25 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: AnalysisTemplate
+# metadata:
+#   name: check-ticket-job
+# spec:
+#   metrics:
+#     - name: check-ticket
+#       interval: 1m
+#       failureCondition: result[0] == 1
+#       successCondition: result[0] == 0
+     
+#       consecutiveSuccessLimit: 1
+#       count: 1440
+#       provider:
+#         job:
+#           spec:
+#             template:
+#               spec:
+#                 restartPolicy: Never
+#                 containers:
+#                   - name: check-ticket
+#                     image: check-ticket:1.0.0
+#             backoffLimit: 0
+#             completions: 1
+#             parallelism: 1
